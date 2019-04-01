@@ -5,3 +5,23 @@
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
 """
+
+from random import random
+
+a = int(100 * random())
+count = 10
+while count: 
+    try:
+        n = int(input('Введите число n: '))
+    except ValueError:
+        print('Введено некорректное значение')
+    if n == a and count != 0:
+        print('Вы угадали!')
+        break
+    elif n < a and count > 1:
+        print('Введенное число меньше необходимого, осталось попыток {}'.format(count - 1))
+    elif n > a and count > 1:
+        print('Введенное число больше необходимого, осталось попыток {}'.format(count - 1))
+    elif n != a and count == 1:
+        print('Необходимое число было {}'.format(a))
+    count -= 1

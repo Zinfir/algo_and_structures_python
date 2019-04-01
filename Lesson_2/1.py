@@ -9,3 +9,44 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+f = '1'
+
+while f != '0':
+    while True:
+        try:
+            a = float(input('Введите a: '))
+    
+            break
+        except ValueError:
+            print('Введены некорректные данные a')
+    
+    while True:
+        try:
+            b = float(input('Введите b: '))
+            break
+        except ValueError:
+            print('Введены некорректные данные b')
+
+    if f == '0':
+        break
+
+    while True:
+        f = input('Введите знак операции (+-*/, 0 - выход): ')
+        if f == '+':
+            print('Результат: {}'.format(a + b))
+            break
+        elif f == '-':
+            print('Результат: {}'.format(a - b))
+            break
+        elif f == '*':
+            print('Результат: {}'.format(a * b))
+            break
+        elif f == '/':
+            if b == 0:
+                print('Error: Деление на ноль.')
+                break
+            else:
+                print('Результат: {}'.format(a / b))
+                break
+        else:
+            print('Введена некорректная операция, повторите ввод.')
