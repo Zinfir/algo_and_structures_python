@@ -7,3 +7,78 @@
 комментариев к коду. Также укажите в комментариях версию Python
 и разрядность вашей ОС.
 """
+
+# 9.Вводятся три разных числа. Найти, какое из них
+# является средним (больше одного, но меньше другого).
+
+import sys
+from decimal import Decimal
+
+# a = float(input('enter a: '))
+# b = float(input('enter b: '))
+# c = float(input('enter c: '))
+
+# Первый вариант решения с использованием float
+
+a1 = float(5.67)
+b1 = float(7.32)
+c1 = float(8.12)
+
+
+min1 = float(min(a1, b1, c1))
+max1 = float(max(a1, b1, c1))
+if min1 < a1 < max1:
+    print('Среднее: ', a1)
+elif min1 < b1 < max1:
+    print('Среднее: ', b1)
+elif min1 < c1 < max1:
+    print('Среднее: ', c1)
+
+
+
+
+# Второй вариант решения с использованием Decimal
+
+a2 = Decimal(5.67)
+b2 = Decimal(7.32)
+c2 = Decimal(8.12)
+
+min2 = Decimal(min(a2, b2, c2))
+max2 = Decimal(max(a2, b2, c2))
+if min2 < a2 < max2:
+    print('Среднее: ', a2)
+elif min2 < b2 < max2:
+    print('Среднее: ', b2)
+elif min2 < c2 < max2:
+    print('Среднее: ', c2)
+
+
+
+# Третий вариант решения с использованием int
+
+a3 = int(5.67)
+b3 = int(7.32)
+c3 = int(8.12)
+
+min3 = int(min(a3, b3, c3))
+max3 = int(max(a3, b3, c3))
+if min3 < a3 < max3:
+    print('Среднее: ', a3)
+elif min3 < b3 < max3:
+    print('Среднее: ', b3)
+elif min3 < c3 < max3:
+    print('Среднее: ', c3)
+
+
+print('Размер float a = {}. Общий размер памяти - {}'.format(sys.getsizeof(float(a1)), sys.getsizeof(float(a1))*5))
+print('Размер Decimal a = {}. Общий размер памяти - {}'.format(sys.getsizeof(Decimal(a2)), sys.getsizeof(Decimal(a2))*5))
+print('Размер int a = {}. Общий размер памяти - {}'.format(sys.getsizeof(int(a3)), sys.getsizeof(int(a3))*5))
+
+"""
+Всего три решения. Количество переменных - 5, a, b, c, min, max.
+Для float размер одного объекта составил 16 байт. Общий размер используемой памяти 80 байт.
+Для Deciaml размер одного объекта составил 76 байт. Общий размер используемой памяти 380 байт.
+Для int размер одного объекта составил 14 байт. Общий размер используемой памяти 70 байт.
+Можно сделать вывод, что Использование Decimal сильно влияет на размер используемой памяти. Если можно обойтись без Decimal, то лучше использовать float.
+Также если нужна только целая часть выгоднее использовать int. Но размер уже не так сильно отличается от float.
+"""

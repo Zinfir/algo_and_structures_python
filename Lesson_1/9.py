@@ -1,9 +1,9 @@
 # 9.Вводятся три разных числа. Найти, какое из них
 # является средним (больше одного, но меньше другого).
 
-a = float(input('enter a: '))
-b = float(input('enter b: '))
-c = float(input('enter c: '))
+a = int(input('enter a: '))
+b = int(input('enter b: '))
+c = int(input('enter c: '))
 
 min = min(a, b, c)
 max = max(a, b, c)
